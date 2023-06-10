@@ -5,14 +5,14 @@ res = '-r150';
 plotx2east
 plotzIntoPlane
 
-dir_sample = '/Users/anders/Library/CloudStorage/OneDrive-NTNU/Master/Data/2100F/27_04_23';
-dir_mtex = '/Users/anders/Library/CloudStorage/OneDrive-NTNU/Master/Data/2100F/27_04_23/plots';
+dir_sample = 'datapath';
+dir_mtex = 'datapath/plots'; %folder to save plots in
 
 lattice_parameters = [6.1 6.1 11];
 angles = [90 90 120] * degree;
 
 cs = crystalSymmetry('6/mmm', lattice_parameters, angles, 'mineral',...
-    'ErMnO3', 'X||a*', 'Z||c*'); %inverted definition because of bug in Orix
+    'ErMnO3', 'X||a*', 'Z||c*'); %Note 'X||a*'
 
 
 
@@ -35,7 +35,7 @@ figure
 plot(ebsd, ebsd.ci)
 mtexColorbar('title', 'NCC')
 mtexColorMap black2white
-%export_fig(fullfile(dir_mtex, 'maps_ncc.png'), res)
+export_fig(fullfile(dir_mtex, 'maps_ncc.png'), res)
 
 
 titles = {'x', 'y', 'z'};
@@ -47,7 +47,7 @@ for i=1:3
     figure
     plot(ebsd, omcolor)
     hold on
-    %export_fig(fullfile(dir_mtex, ['maps_ipf_' titles{i} '.png']), res)
+    export_fig(fullfile(dir_mtex, ['maps_ipf_' titles{i} '.png']), res)
 end
 
 %calculate grains
