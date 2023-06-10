@@ -5,8 +5,8 @@ res = '-r150';
 plotx2east
 plotzIntoPlane
 
-dir_sample = '/Users/anders/Library/CloudStorage/OneDrive-NTNU/Master/Data/2100F/27_04_23';
-dir_mtex = '/Users/anders/Library/CloudStorage/OneDrive-NTNU/Master/Data/2100F/27_04_23/plots';
+dir_sample = 'Datapath';
+dir_mtex = 'Datapath/plots';
 
 lattice_parameters = [6.1 6.1 11];
 angles = [90 90 120] * degree;
@@ -48,8 +48,8 @@ cS = crystalShape.hex(ebsd.CS);
 
 %plot figure labeling grains, and print to console mean orientation of grains
 % results are copy pasted to .txt file and read by Gonio_tilt.ipynb
-% Results are in Full_lamella_oris_rotated180.txt, with renamed labels and deleted 
-%uninteresting grains. 
+% Results are in Full_lamella_oris_rotated180.txt, with renamed labels according to thesis 
+% and deleted uninteresting grains. 
 
 figure
 plot(ebsd, omcolor)
